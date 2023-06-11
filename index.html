@@ -1,0 +1,204 @@
+<!Doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <title>スパルタペディア</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Gowun Dodum', sans-serif;
+        }
+
+        .mytitle {
+            width: 100%;
+            height: 250px;
+
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://movie-phinf.pstatic.net/20210715_95/1626338192428gTnJl_JPEG/movie_image.jpg');
+            background-position: center;
+            background-size: cover;
+
+            color: white;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mytitle > button {
+            width: 200px;
+            height: 50px;
+
+            background-color: transparent;
+            color: white;
+
+            border-radius: 50px;
+            border: 1px solid white;
+
+            margin-top: 10px;
+        }
+
+        .mytitle > button:hover {
+            border: 2px solid white;
+        }
+
+        .mycomment {
+            color: royalblue;
+        }
+
+        .mycards {
+            margin: 20px auto 0px auto;
+            width: 95%;
+            max-width: 1200px;
+        }
+
+        .mypost {
+            width: 95%;
+            max-width: 500px;
+            margin: 20px auto 0px auto;
+            padding: 20px;
+            box-shadow: 0px 0px 3px 0px gray;
+        }
+
+        .mybtns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+        }
+
+        .mybtns > button {
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        $(document).ready(function hey() {
+            fetch("http://spartacodingclub.shop/sparta_api/weather/tokyo").then(res => res.json()).then(data => {
+                // console.log(data)
+                let numbers = data['temp']
+                $('#temp').text(numbers)
+            })
+        })
+    </script>
+</head>
+
+<body>
+<div class="mytitle">
+    <h1>わたしの人生最高の映画</h1>
+    <div>今の気温 : <span id="temp">${number}</span>℃</div>
+    <button onclick="hey()">映画記録</button>
+</div>
+<div class="mypost">
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+
+    </div>
+    <div class="input-group mb-3">
+        <label class="input-group-text" for="inputGroupSelect01">採点</label>
+        <select class="form-select" id="inputGroupSelect01">
+            <option selected>-- 選択 --</option>
+            <option value="1">⭐</option>
+            <option value="2">⭐⭐</option>
+            <option value="3">⭐⭐⭐</option>
+            <option value="4">⭐⭐⭐⭐</option>
+            <option value="5">⭐⭐⭐⭐⭐</option>
+        </select>
+    </div>
+    <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                      style="height: 100px"></textarea>
+        <label for="floatingTextarea2">コメント</label>
+    </div>
+    <div class="mybtns">
+        <button type="button" class="btn btn-dark">記録</button>
+        <button type="button" class="btn btn-outline-dark">閉じる</button>
+    </div>
+</div>
+<div class="mycards">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://eiga.k-img.com/images/movie/89815/photo/96b24b095e00294b.jpg?1551941580"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">グリーンブック</h5>
+                    <p class="card-text">
+                        人種差別が色濃く残る1960年代のアメリカ南部を舞台に、黒人ジャズピアニストとイタリア系白人運転手の2人が旅を続けるなかで友情を深めていく姿を、実話をもとに描き、第91回アカデミー作品賞を受賞したドラマ。1962年、ニューヨークの高級クラブで用心棒として働くトニー・リップは、粗野で無教養だが口が達者で、何かと周囲から頼りにされていた。クラブが改装のため閉鎖になり、しばらくの間、無職になってしまったトニーは、南部でコンサートツアーを計画する黒人ジャズピアニストのドクター・シャーリーに運転手として雇われる。黒人差別が色濃い南部へ、あえてツアーにでかけようとするドクター・シャーリーと、黒人用旅行ガイド「グリーンブック」を頼りに、その旅に同行することになったトニー。出自も性格も全く異なる2人は、当初は衝突を繰り返すものの、次第に友情を築いていく。トニー役に「イースタン・プロミス」のビゴ・モーテンセン、ドクター・シャーリー役に「ムーンライト」のマハーシャラ・アリ。トニー・リップ（本名トニー・バレロンガ）の実の息子であるニック・バレロンガが製作・脚本を手がけ、父とドクター・シャーリーの友情の物語を映画化した。監督は、「メリーに首ったけ」などコメディ映画を得意としてきたファレリー兄弟の兄ピーター・ファレリー。アカデミー賞では全5部門でノミネートされ、作品賞のほか脚本賞、助演男優賞を受賞した。</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p class="mycomment">自分の一行レビューを書きます</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://eiga.k-img.com/images/buzz/46799/overthelec_large.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Over The L'Arc-en-Ciel</h5>
+                    <p class="card-text">12年3月3日から5月31日に、結成20周年を記念して行われた17公演に及ぶ大規模なワールドツアー「WORLD TOUR
+                        2012」。香港、上海、ソウルをはじめとしたアジアからニューヨーク、ロンドン、パリ、ホノルルに加え、東京、大阪、横浜でもライブを行い、45万人以上を動員した。
+
+                        同ツアーに密着した本作は、バンドの存在を知らなかったというアメリカ出身の新進映像ディレクター、Ray
+                        Yoshimotoがメガホンをとり、新たな視点でバンドの姿を見つめる。迫力あるライブ像から、これまで公にされることが少なかった貴重なバックステージ、オフステージの模様まで網羅。マディソン・スクエア・ガーデンで実現させた日本人初の単独公演の舞台裏、ホノルルのステージで見せた涙の理由にも迫る。
+
+                        ポスターは、熱いパフォーマンスでファンを魅了するメンバーの表情とともに、熱気あふれるライブ会場の様子を切り取り、ツアーの興奮が感じられるデザインとなっている。</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p class="mycomment">自分の一行レビューを書きます</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://m.media-amazon.com/images/I/91MYueE+vfL._AC_SL1500_.jpg"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">エクスペンダブルズ</h5>
+                    <p class="card-text">全世界が待っていたドリーム・プロジェクト!
+                        シルベスター・スタローン、ジェイソン・ステイサム、ジェット・リー、ドルフ・ラングレン、ミッ
+                        キー・ローク、ブルース・ウィリスそして、アーノルド・シュワルシェネッガーとハリウッド史上最
+                        強のメンバーが集結!
+                        ■アクション映画の限界に挑むエンタテイメント作品の誕生!
+                        すべてを焼き尽くし、破壊する空前絶後の火薬量と銃弾数。ノンストップで爆走し、クラッシュを繰
+                        り返す怒涛のカー・チェイス! 水陸両用飛行艇を駆使した空爆など全編すべてがこだわり満載の作
+                        品。アクション映画の最高傑作の登場!
+
+                        軍事独裁政権を破壊せよ!
+                        史上最大の作戦に燃える、命知らずの傭兵軍団!!</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p class="mycomment">自分の一行レビューを書きます</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="https://movies-pctr.c.yimg.jp/dk/movies/poster-images/134393_01.jpg?w=312&h=297&fmt=webp&q=90"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">天使にラブソングを</h5>
+                    <p class="card-text">『ゴースト』でアカデミー賞をとったウーピー・ゴールドバーグが、今度はコメディーに挑戦した。92年、全米で6か月を超えるロングランを記録した大ヒット作である。
+                        殺人現場を目撃してしまったクラブ歌手のデロリスは、ギャングに命をねらわれるはめになる。デロリスが身を隠した場所は、お堅い修道院。最初はおとなしく隠れていたが、聖歌隊のリーダーになって本領を発揮。ヘタクソなコーラスがソウルやロックのリズミカルな賛美歌に変わり、街中で評判になってテレビ中継までされてしまった。だが、それにギャングが気づかないわけがない。デロリスの無事は…。
+                        敬けんなシスターたちが、デロリスの指揮にのせられてノリノリでゴスペルを歌う姿は、まさにアメリカ発のゴスペルの奥の深さを実感できるシーンだ。最後はちょっとほろりとするヒューマンコメディーでもある。</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p class="mycomment">自分の一行レビューを書きます</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
